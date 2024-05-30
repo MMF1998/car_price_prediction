@@ -1,0 +1,129 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car price prediction</title>
+</head>
+
+  
+    </style>
+</head>     
+<body>
+  <!DOCTYPE html>
+  <html>
+  <head>
+  </head>
+  <body>
+    
+  </body>
+  </html>
+<h1>Prédiction de prix de vente de véhicule d'occasion en Tunisie</h1>
+  <form action="{{ url_for('predict')}}" method="post">
+  <label for="marque">marque:</label>
+<select id="marque" name="marque">
+  <option value="Peugeot">Peugeot</option>
+  <option value="Kia">Kia</option>
+  <option value="Renault">Renault</option>
+  <option value="Toyota">Toyota</option>
+  <option value="Volkswagen">Volkswagen</option>
+ </select>
+<label for="carburant"> carburant:</label>
+<select id="carburant" name="carburant" required>
+<option value="Essence" selected>Essence</option>
+<option value="Diesel">Diesel</option>
+</select>
+<label for="kilometrage">kilométrage(Km):</label>
+<input type="number" id="kilometrage" name="kilometrage" min="0">
+
+<label for="puissance">puissance:</label>
+<input type="number" id="puissance" name="puissance" min="0">
+
+<label for="age">age:</label>
+<input type="number" id="age" name="age" min="0">
+
+<label for="prix_achat">Prix d'achat(dnt):</label>
+<input type="number" id="price_achat" name="price_achat" min="0" step="0.01" required>
+
+<label for="prix_vente">Prix de vente(dnt):</label>
+<input type="number" id="price_vente" name="price_vente" min="0" step="0.01" required>
+<br></br>
+<button type="submit">Vérifier</button>
+</form>
+<br><br><h3>{{ prediction_text }}<h3>
+</div>
+<style>
+  body {
+background-image:url("{{ url_for('static', filename='Background.png') }}");;
+background-size: cover;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column; 
+max-width: 500px;
+margin: 0 auto;
+} 
+
+
+
+h1 {
+text-align: center;
+margin-top: 50px;
+color: #f5f2f2;
+}
+h3 {
+text-align: center;
+margin-top: 50px;
+color: #f5f2f2;
+}
+
+form {
+width: 80%;
+margin: 0 auto;
+background-color: #fff;
+padding: 20px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+border-radius: 5px;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #333;
+}
+
+input[type="text"], select {
+width: 100%;
+padding: 10px;
+border: 1px solid #8c6767;
+border-radius: 3px;
+box-sizing: border-box;
+margin-bottom: 20px;
+font-size: 16px;
+}
+
+button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+font-size: 16px;
+margin-top: 20px;
+}
+
+button:hover {
+background-color: #3e8e41;
+}
+  
+
+</style>
+    
+</body>
+</html>
+
+
